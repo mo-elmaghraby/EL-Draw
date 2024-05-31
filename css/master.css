@@ -1,0 +1,189 @@
+/* start basic */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* end basic */
+
+/* strat the letters    E & L */
+.Draw-EL {
+    width: 700px;
+    height: 500px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #aaa;
+    padding: 15px;
+
+}
+
+.e , .l {
+    width: 45%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-template-rows: repeat(7 ,1fr);
+    position: relative;
+}
+.e > div ,
+.l > div {
+    background-color: #323234;
+}
+
+.one {
+    grid-area: one ;
+}
+.two {
+    grid-area: two ;
+}
+.three {
+    grid-area: three ;
+}
+.four {
+    grid-area: four ;
+}
+.five {
+    grid-area: five ;
+}
+.six {
+    grid-area: six ;
+}
+
+.e {
+    grid-template-areas: "four one one one"
+                         "four . . . "
+                         "four . . . "
+                         "four two two two "
+                         "four . . . "
+                         "four . . . "
+                         "four three three three  ";
+}
+.l {
+    grid-template-areas: "five . . ."
+                         "five . . . "
+                         "five . . . "
+                         "five . . . "
+                         "five . . . "
+                         "five . . . "
+                         "five six six six  ";
+}
+
+.e::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 245px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    animation: move-E 6s infinite linear 3s;
+    opacity: 0;
+    -webkit-animation: move-E 6s infinite linear 3s;
+}
+
+.l ::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 245px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    animation: move-L 6s linear infinite;
+    opacity: 0;
+    -webkit-animation: move-L 6s linear infinite;
+}
+
+/* move1 */
+
+@keyframes move-E {
+    5% {
+        opacity: 1;
+        top: 5px;
+        left: 245px;
+    }
+    
+    10% {
+        opacity: 1;
+        top: 5px;
+        left: 15px;
+    }
+    20% {
+        opacity: 1;
+        top: 188px;
+        left: 15px;
+    }
+    25% {
+        opacity: 1;
+        top: 188px;
+        left: 245px;
+    }
+    30% {
+        opacity: 1;
+        top: 188px;
+        left: 15px;
+    }
+    35% {
+        opacity: 1;
+        top: 368px;
+        left: 15px;
+    }
+    40% {
+        opacity: 1;
+        top: 368px;
+        left: 245px;
+    }
+    45% {
+        opacity: 1;
+        top: 368px;
+        left: 15px;
+    }
+    50% {
+        opacity: 1;
+        top: 5px;
+        left: 15px;
+    }
+    60% {
+        opacity: 1;
+        top: 5px;
+        left: 245px;
+    }
+}    
+
+/* move2 */
+
+@keyframes move-L {
+    5% {
+        opacity: 1;
+        bottom: 5px;
+        left: 245px;
+    }
+    
+    15% {
+        bottom: 5px;
+        left: 245px;
+    }
+    45% {
+        opacity: 1;
+        left: 15px;
+        bottom: 5px;
+    }
+    50% {
+        left: 15px;
+        bottom: 365px;
+    }
+    60% {
+        opacity: 0;
+        left: 15px;
+        bottom: 365px;
+    }
+    100% {
+        left: 15px;
+        bottom: 365px;
+        opacity: 0;
+    } 
+}
+
+/* end the letters    E & L */
